@@ -46,7 +46,6 @@ def main():
         resp = req.get(r'https://graph.microsoft.com/v1.0/me/drive/root',headers=headers)
         if resp.status_code == 200:
             num1+=1
-            print(resp.text)
             print("1调用成功"+str(num1)+'次')
         if req.get(r'https://graph.microsoft.com/v1.0/me/drive',headers=headers).status_code == 200:
             num1+=1
@@ -61,8 +60,6 @@ def main():
         if resp.status_code == 200:
             num1+=1
             print('5调用成功'+str(num1)+'次')    
-        else:
-            print(resp.text)
         if req.get(r'https://graph.microsoft.com/v1.0/me/mailFolders/inbox/messageRules',headers=headers).status_code == 200:
             num1+=1
             print('6调用成功'+str(num1)+'次')    
